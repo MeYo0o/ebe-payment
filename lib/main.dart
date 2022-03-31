@@ -1,4 +1,9 @@
+import 'package:ebe_payment/core/app_dependencies.dart';
+import 'package:ebe_payment/core/constants.dart';
+import 'package:ebe_payment/views/main_screen/main_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,58 +14,25 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+    return ScreenUtilInit(
+      splitScreenMode: true,
+      minTextAdapt: true,
+      designSize: const Size(768, 1366),
+      builder: () => GetMaterialApp(
+        builder: (context, child) {
+          ScreenUtil.setContext(context);
+          return MediaQuery(
+            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+            child: child!,
+          );
+        },
+        title: 'EBE Payment',
+        debugShowCheckedModeBanner: false,
+        initialBinding: AppBindings(),
+        theme: ThemeData(
+          primarySwatch: kPrimaryColor,
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        home: const MainScreen(),
       ),
     );
   }
