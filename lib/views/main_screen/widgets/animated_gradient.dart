@@ -14,7 +14,8 @@ class _AnimatedGradientState extends State<AnimatedGradient> {
     // Colors.blue,
     // Colors.green,
     // Colors.yellow
-    kAccentColor, kSecondaryColor, kAccentColor, kSecondaryColor,
+    kPrimaryColor.withOpacity(0.5), kSecondaryColor.withOpacity(0.5), kAccentColor.withOpacity(0.5),
+    kSecondaryColor.withOpacity(0.5),
   ];
   List<Alignment> alignmentList = [
     Alignment.bottomLeft,
@@ -25,8 +26,8 @@ class _AnimatedGradientState extends State<AnimatedGradient> {
   int index = 0;
   // Color bottomColor = Colors.red;
   // Color topColor = Colors.yellow;
-  Color topColor = kAccentColor;
-  Color bottomColor = kSecondaryColor;
+  Color topColor = kPrimaryColor.withOpacity(0.5);
+  Color bottomColor = kSecondaryColor.withOpacity(0.5);
   Alignment begin = Alignment.bottomLeft;
   Alignment end = Alignment.topRight;
 
@@ -38,7 +39,7 @@ class _AnimatedGradientState extends State<AnimatedGradient> {
       () {
         setState(
           () {
-            bottomColor = Colors.blue;
+            bottomColor = kPrimaryColor.withOpacity(0.5);
           },
         );
       },
@@ -66,9 +67,7 @@ class _AnimatedGradientState extends State<AnimatedGradient> {
             },
             decoration: BoxDecoration(
                 gradient: LinearGradient(
-                    begin: begin,
-                    end: end,
-                    colors: [bottomColor, topColor])),
+                    begin: begin, end: end, colors: [bottomColor.withOpacity(0.5), topColor.withOpacity(0.5)])),
           ),
           // Positioned.fill(
           //   child: IconButton(
