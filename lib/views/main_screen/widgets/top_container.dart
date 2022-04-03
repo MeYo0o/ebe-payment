@@ -11,7 +11,7 @@ class TopContainer extends StatelessWidget {
     return Stack(
       children: const [
         MiddleContainer(),
-        ClippedContainer(),
+        // ClippedContainer(),
         TopNavBar(),
       ],
     );
