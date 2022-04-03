@@ -1,10 +1,10 @@
+import 'package:ebe_payment/core/screen_sizes.dart';
+import 'package:ebe_payment/views/main_screen/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-
 import '../../../../controllers/main_screen/main_controller.dart';
 import '../../../../core/constants.dart';
-import '../../../../core/respnsive.dart';
 import '../../../common_widgets/meyo_button.dart';
 
 class TopNavBar extends StatelessWidget {
@@ -26,8 +26,7 @@ class TopNavBar extends StatelessWidget {
             'assets/images/ebe-logo.png',
             width: 200,
           ),
-          if (Responsive.isTablet(context) ||
-              Responsive.isDesktop(context)) ...[
+          if (kCurrentSize(context) > kTablet) ...[
             Row(
               children: [
                 ...List.generate(
@@ -36,8 +35,9 @@ class TopNavBar extends StatelessWidget {
                     onPressed: () {},
                     child: Text(
                       kMobileMenuList[index],
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Colors.white,
+                        fontSize: 30.sp,
                       ),
                     ),
                   ),
@@ -46,35 +46,38 @@ class TopNavBar extends StatelessWidget {
             ),
             const MeyoButton(text: 'Sign In'),
           ] else ...[
-            MouseRegion(
-              onHover: (hover) {
-                final mc = Get.find<MainController>();
-                mc.mainPopupMenuKey.currentState!.showButtonMenu();
-              },
-              onExit: (exit) {},
-              child: PopupMenuButton(
-                key: Get.find<MainController>().mainPopupMenuKey,
-                icon: const Icon(
-                  Icons.menu,
-                  color: Colors.white,
-                ),
-                offset: const Offset(0, 40),
-                itemBuilder: (context) => kMobileMenuList
-                    .map(
-                      (item) => PopupMenuItem(
-                        value: item,
-                        child: Text(item),
+            GetBuilder<MainController>(
+                init: Get.find<MainController>(),
+                builder: (mc) {
+                  return MouseRegion(
+                    onHover: (hover) {
+                      mc.mainPopupMenuKey.currentState!.showButtonMenu();
+                    },
+                    onExit: (exit) {},
+                    child: PopupMenuButton(
+                      key: Get.find<MainController>().mainPopupMenuKey,
+                      icon: const Icon(
+                        Icons.menu,
+                        color: Colors.white,
                       ),
-                    )
-                    .toList()
-                  ..add(
-                    const PopupMenuItem(
-                      value: '',
-                      child: MeyoButton(text: 'Sign In'),
+                      offset: const Offset(0, 40),
+                      itemBuilder: (context) => kMobileMenuList
+                          .map(
+                            (item) => PopupMenuItem(
+                              value: item,
+                              child: Text(item),
+                            ),
+                          )
+                          .toList()
+                        ..add(
+                          const PopupMenuItem(
+                            value: '',
+                            child: MeyoButton(text: 'Sign In'),
+                          ),
+                        ),
                     ),
-                  ),
-              ),
-            ),
+                  );
+                }),
           ],
         ],
       ),
