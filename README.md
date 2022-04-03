@@ -1,3 +1,5 @@
-# ebe_payment
+# EBE Payment
 
-The official EBE Payment website made with Flutter
+currently in-development
+
+Live Website : https://ebe-payment.web.app/#/
