@@ -11,11 +11,11 @@ class MiddleStartContact extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        MeyoButton(text: 'Start Now'),
-        GapWidth(20),
+        const MeyoButton(text: 'Start Now'),
+        const GapWidth(20),
         TextButton(
           onPressed: () {},
-          child: Text('Contact Sales >'),
+          child: const Text('Contact Sales >'),
           style: TextButton.styleFrom(
             primary: Colors.black,
             textStyle: TextStyle(

@@ -1,8 +1,8 @@
 import 'package:ebe_payment/core/screen_sizes.dart';
-import 'package:ebe_payment/views/main_screen/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
 import '../../../../controllers/main_screen/main_controller.dart';
 import '../../../../core/constants.dart';
 import '../../../common_widgets/meyo_button.dart';

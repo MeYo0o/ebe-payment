@@ -1,13 +1,11 @@
-import 'package:ebe_payment/core/screen_sizes.dart';
 import 'package:ebe_payment/views/common_widgets/gap_height.dart';
-import 'package:ebe_payment/views/common_widgets/gap_width.dart';
-import 'package:ebe_payment/views/common_widgets/meyo_button.dart';
 import 'package:ebe_payment/views/main_screen/widgets/top_container_widgets/middle_widgets/middle_left/middle_body.dart';
 import 'package:ebe_payment/views/main_screen/widgets/top_container_widgets/middle_widgets/middle_left/middle_heading.dart';
 import 'package:ebe_payment/views/main_screen/widgets/top_container_widgets/middle_widgets/middle_right/middle_right_art.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../core/screen_sizes.dart';
 import 'middle_widgets/middle_left/middle_start_contact.dart';
 
 class MiddleContainer extends StatelessWidget {
@@ -17,7 +15,7 @@ class MiddleContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(
-        top: 210,
+        top: 170,
         left: 20.w,
         right: 20.w,
       ),
@@ -38,7 +36,7 @@ class MiddleContainer extends StatelessWidget {
                     ],
                   ),
                 ),
-                Expanded(
+                const Expanded(
                   child: MiddleRightArt(),
                 ),
               ],

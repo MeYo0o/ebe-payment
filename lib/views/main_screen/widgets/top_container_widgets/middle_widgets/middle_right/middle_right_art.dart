@@ -11,7 +11,7 @@ class MiddleRightArt extends StatelessWidget {
         height: 400,
         alignment: Alignment.center,
         color: Colors.black38,
-        child: Text('EBE - Payment Design Art'),
+        child: const Text('EBE - Payment Design Art'),
       ),
     );
   }
