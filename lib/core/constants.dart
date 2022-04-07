@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 const kPrimaryColor = Colors.indigo;
-const kSecondaryColor = Color(0XFF00296B);
-const kAccentColor = Colors.yellow;
+const kSecondaryColor = Color(0xFFFFD000);
+const kAccentColor = Colors.redAccent;
 
 //dummy data
 const List<String> kMobileMenuList = [

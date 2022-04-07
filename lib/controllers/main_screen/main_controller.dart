@@ -47,7 +47,7 @@ class MainController extends GetxController {
 
     //TODO :partnersAnimationController - done
     if (mainScrollerController.offset >=
-        mainScrollerController.position.maxScrollExtent * 0.35) {
+        mainScrollerController.position.maxScrollExtent * 0.2) {
       runAnimations(MainScreenAnimations.partners);
     } else {
       stopAnimations(MainScreenAnimations.partners);
@@ -58,7 +58,7 @@ class MainController extends GetxController {
     switch (mainScreenAnimations) {
       case MainScreenAnimations.partners:
         if (!partnerAnimRunning) {
-          debugPrint('Animations are running');
+          // debugPrint('Animations are running');
           partnerAnimRunning = true;
           partnerAnimValue = 1.0;
           update();
@@ -71,7 +71,7 @@ class MainController extends GetxController {
     switch (mainScreenAnimations) {
       case MainScreenAnimations.partners:
         if (partnerAnimRunning) {
-          debugPrint('Animations are stopping');
+          // debugPrint('Animations are stopping');
           partnerAnimRunning = false;
           partnerAnimValue = 0;
           update();

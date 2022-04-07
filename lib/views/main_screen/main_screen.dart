@@ -27,7 +27,7 @@ class MainScreen extends StatelessWidget {
               const Divider(thickness: 5, indent: 20, endIndent: 20),
               const PartnersContainer(),
               Container(
-                height: 400,
+                height: 800,
                 color: Colors.blueGrey,
               ),
             ][index];
