@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+enum MainScreenAnimations {
+  partners,
+}
+
 class MainController extends GetxController {
+  final mainScaffoldKey = GlobalKey<ScaffoldState>();
+  final mainPopupMenuKey = GlobalKey<PopupMenuButtonState>();
+  //scroller to maintain animations run states
+  final ScrollController mainScrollerController = ScrollController();
+
+  //---------Animations----------
+  double partnerAnimValue = 0;
+  bool partnerAnimRunning = false;
+
   @override
   void onInit() {
     super.onInit();
@@ -31,30 +44,39 @@ class MainController extends GetxController {
     //     !mainScrollerController.position.outOfRange) {
     //   print('i am at the bottom!');
     // }
-    //partnersAnimationController
 
+    //TODO :partnersAnimationController - done
     if (mainScrollerController.offset >=
-        mainScrollerController.position.maxScrollExtent * 0.5) {
-      runPartnersAnimations();
+        mainScrollerController.position.maxScrollExtent * 0.35) {
+      runAnimations(MainScreenAnimations.partners);
     } else {
-      partnerAnimRunning = false;
-      partnerAnimDuration = 0;
-      update();
+      stopAnimations(MainScreenAnimations.partners);
     }
   }
 
-  final mainScaffoldKey = GlobalKey<ScaffoldState>();
-  final mainPopupMenuKey = GlobalKey<PopupMenuButtonState>();
-  final ScrollController mainScrollerController = ScrollController();
-  double partnerAnimDuration = 0;
-  bool partnerAnimRunning = false;
+  void runAnimations(MainScreenAnimations mainScreenAnimations) {
+    switch (mainScreenAnimations) {
+      case MainScreenAnimations.partners:
+        if (!partnerAnimRunning) {
+          debugPrint('Animations are running');
+          partnerAnimRunning = true;
+          partnerAnimValue = 1.0;
+          update();
+        }
+        break;
+    }
+  }
 
-  void runPartnersAnimations() async {
-    if (!partnerAnimRunning) {
-      debugPrint('runPartnersAnimations');
-      partnerAnimRunning = true;
-      partnerAnimDuration = 1.0;
-      update();
+  void stopAnimations(MainScreenAnimations mainScreenAnimations) {
+    switch (mainScreenAnimations) {
+      case MainScreenAnimations.partners:
+        if (partnerAnimRunning) {
+          debugPrint('Animations are stopping');
+          partnerAnimRunning = false;
+          partnerAnimValue = 0;
+          update();
+        }
+        break;
     }
   }
 }

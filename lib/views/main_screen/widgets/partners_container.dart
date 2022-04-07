@@ -43,11 +43,9 @@ class PartnersContainer extends StatelessWidget {
                 children: kPartnersList
                     .map(
                       (partner) => AnimatedOpacity(
-                        duration: Duration(
-                            milliseconds: 300 +
-                                kPartnersList.indexOf(partner) * 400),
-                        opacity: msc.partnerAnimDuration,
-                        curve: Curves.bounceIn,
+                        duration: const Duration(milliseconds: 1000),
+                        opacity: msc.partnerAnimValue,
+                        curve: Curves.easeIn,
                         child: Container(
                           margin: const EdgeInsets.only(right: 10),
                           padding: const EdgeInsets.all(10),

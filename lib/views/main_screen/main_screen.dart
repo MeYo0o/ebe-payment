@@ -25,16 +25,16 @@ class MainScreen extends StatelessWidget {
             cacheExtent: 300,
             controller: msc.mainScrollerController,
             physics: const BouncingScrollPhysics(),
-            itemCount: 3,
+            itemCount: 4,
             itemBuilder: (context, index) {
-              return const [
-                TopContainer(),
-                Divider(
-                  thickness: 5,
-                  indent: 20,
-                  endIndent: 20,
+              return [
+                const TopContainer(),
+                const Divider(thickness: 5, indent: 20, endIndent: 20),
+                const PartnersContainer(),
+                Container(
+                  height: 400,
+                  color: Colors.blueGrey,
                 ),
-                PartnersContainer(),
               ][index];
             },
           ),
