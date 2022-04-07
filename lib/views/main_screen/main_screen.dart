@@ -14,31 +14,41 @@ class MainScreen extends StatelessWidget {
       key: msc.mainScaffoldKey,
       body: SizedBox(
         width: double.infinity,
-        child: Scrollbar(
+        child: ListView.builder(
+          //   primary: true,
+          shrinkWrap: true,
+          cacheExtent: 300,
           controller: msc.mainScrollerController,
-          // thickness: 3,
-          // isAlwaysShown: true,
-          //! enable from here
-          child: ListView.builder(
-            //   primary: true,
-            shrinkWrap: true,
-            cacheExtent: 300,
-            controller: msc.mainScrollerController,
-            physics: const BouncingScrollPhysics(),
-            itemCount: 4,
-            itemBuilder: (context, index) {
-              return [
-                const TopContainer(),
-                const Divider(thickness: 5, indent: 20, endIndent: 20),
-                const PartnersContainer(),
-                Container(
-                  height: 400,
-                  color: Colors.blueGrey,
-                ),
-              ][index];
-            },
-          ),
+          physics: const BouncingScrollPhysics(),
+          itemCount: 4,
+          itemBuilder: (context, index) {
+            return [
+              const TopContainer(),
+              const Divider(thickness: 5, indent: 20, endIndent: 20),
+              const PartnersContainer(),
+              Container(
+                height: 400,
+                color: Colors.blueGrey,
+              ),
+            ][index];
+          },
         ),
+
+        //     ListView(
+        //   //   primary: true,
+        //   shrinkWrap: true,
+        //   controller: msc.mainScrollerController,
+        //   // physics: const NeverScrollableScrollPhysics(),
+        //   children: [
+        //     const TopContainer(),
+        //     const Divider(thickness: 5, indent: 20, endIndent: 20),
+        //     const PartnersContainer(),
+        //     Container(
+        //       height: 1000,
+        //       color: Colors.blueGrey,
+        //     ),
+        //   ],
+        // ),
       ),
     );
   }

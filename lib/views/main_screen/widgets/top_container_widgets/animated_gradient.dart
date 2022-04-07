@@ -14,7 +14,8 @@ class _AnimatedGradientState extends State<AnimatedGradient> {
     // Colors.blue,
     // Colors.green,
     // Colors.yellow
-    kPrimaryColor, kSecondaryColor,
+    kPrimaryColor,
+    kSecondaryColor,
     kAccentColor,
     kSecondaryColor,
   ];

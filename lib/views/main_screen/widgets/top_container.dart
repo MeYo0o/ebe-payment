@@ -1,8 +1,7 @@
+import 'package:ebe_payment/views/main_screen/widgets/top_container_widgets/cliped_container.dart';
 import 'package:ebe_payment/views/main_screen/widgets/top_container_widgets/middle_widgets.dart';
 import 'package:ebe_payment/views/main_screen/widgets/top_container_widgets/top_nav_bar.dart';
 import 'package:flutter/material.dart';
-
-import 'top_container_widgets/cliped_container.dart';
 
 class TopContainer extends StatelessWidget {
   const TopContainer({Key? key}) : super(key: key);

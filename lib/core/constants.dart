@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 const kPrimaryColor = Colors.indigo;
-const kSecondaryColor = Color(0xFFAF002C);
+const kSecondaryColor = Color(0XFF00296B);
 const kAccentColor = Colors.yellow;
 
 //dummy data
