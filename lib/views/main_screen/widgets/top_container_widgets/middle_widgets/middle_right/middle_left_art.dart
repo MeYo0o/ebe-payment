@@ -3,22 +3,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/screen_sizes.dart';
 
-class MiddleRightArt extends StatefulWidget {
-  const MiddleRightArt({Key? key}) : super(key: key);
+class MiddleLeftArt extends StatefulWidget {
+  const MiddleLeftArt({Key? key}) : super(key: key);
 
   @override
-  State<MiddleRightArt> createState() => _MiddleRightArtState();
+  State<MiddleLeftArt> createState() => _MiddleLeftArtState();
 }
 
-class _MiddleRightArtState extends State<MiddleRightArt> {
-  double _animatedRightPos = 0;
+class _MiddleLeftArtState extends State<MiddleLeftArt> {
+  double _animatedTopPos = 0;
 
   @override
   void didChangeDependencies() async {
     super.didChangeDependencies();
     await Future.delayed(const Duration(milliseconds: 1500));
     setState(() {
-      _animatedRightPos = 60.w;
+      _animatedTopPos = 175.5;
     });
   }
 
@@ -27,14 +27,14 @@ class _MiddleRightArtState extends State<MiddleRightArt> {
     if (kCurrentSize(context) > kDesktop) {
       return AnimatedPositioned(
         duration: const Duration(milliseconds: 1500),
-        top: 175,
+        top: _animatedTopPos,
         //animate for right
-        right: _animatedRightPos,
+        right: 220.w,
         child: Container(
           height: 400,
           alignment: Alignment.center,
           // color: Colors.black38,
-          child: Image.asset('assets/images/6-min.png'),
+          child: Image.asset('assets/images/4-min.png'),
         ),
       );
     } else {

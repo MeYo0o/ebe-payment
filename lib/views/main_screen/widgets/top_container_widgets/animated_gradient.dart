@@ -17,7 +17,6 @@ class _AnimatedGradientState extends State<AnimatedGradient> {
     kPrimaryColor,
     kSecondaryColor,
     kAccentColor,
-    kSecondaryColor,
   ];
   List<Alignment> alignmentList = [
     Alignment.bottomLeft,
@@ -53,7 +52,7 @@ class _AnimatedGradientState extends State<AnimatedGradient> {
     return Opacity(
       opacity: 0.7,
       child: AnimatedContainer(
-        duration: const Duration(seconds: 2),
+        duration: const Duration(milliseconds: 1500),
         onEnd: () {
           setState(() {
             index = index + 1;

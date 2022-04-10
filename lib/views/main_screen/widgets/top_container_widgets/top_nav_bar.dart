@@ -1,11 +1,12 @@
 import 'package:ebe_payment/core/screen_sizes.dart';
+import 'package:ebe_payment/views/common_widgets/texts/custom_nav_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../../controllers/main_screen/main_controller.dart';
 import '../../../../core/constants.dart';
-import '../../../common_widgets/meyo_button.dart';
+import '../../../common_widgets/buttons/custom_elevated_button.dart';
 
 class TopNavBar extends StatelessWidget {
   const TopNavBar({Key? key}) : super(key: key);
@@ -33,18 +34,16 @@ class TopNavBar extends StatelessWidget {
                   kMobileMenuList.length,
                   (index) => TextButton(
                     onPressed: () {},
-                    child: Text(
-                      kMobileMenuList[index],
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30.sp,
-                      ),
-                    ),
+                    child: CustomNavText(
+                        text: kMobileMenuList[index], fontSize: 30.sp),
                   ),
                 ),
               ],
             ),
-            const MeyoButton(text: 'Sign In'),
+            MeyoButton(
+              text: 'Sign In',
+              fontSize: 25.sp,
+            ),
           ] else ...[
             GetBuilder<MainController>(
                 init: Get.find<MainController>(),
@@ -70,9 +69,12 @@ class TopNavBar extends StatelessWidget {
                           )
                           .toList()
                         ..add(
-                          const PopupMenuItem(
+                          PopupMenuItem(
                             value: '',
-                            child: MeyoButton(text: 'Sign In'),
+                            child: MeyoButton(
+                              text: 'Sign In',
+                              fontSize: 25.sp,
+                            ),
                           ),
                         ),
                     ),

@@ -3,8 +3,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-const int DEFAULT_NORMAL_SCROLL_ANIMATION_LENGTH_MS = 250;
-const int DEFAULT_SCROLL_SPEED = 130;
+const int defaultNormalScrollAnimationLengthMS = 250;
+const int defaultScrollSpeed = 130;
 
 class SmoothScrollWeb extends StatelessWidget {
   ///Same ScrollController as the child widget's.
@@ -25,12 +25,13 @@ class SmoothScrollWeb extends StatelessWidget {
   double _scroll = 0;
 
   SmoothScrollWeb({
+    Key? key,
     required this.controller,
     required this.child,
-    this.scrollSpeed = DEFAULT_SCROLL_SPEED,
-    this.scrollAnimationLength = DEFAULT_NORMAL_SCROLL_ANIMATION_LENGTH_MS,
+    this.scrollSpeed = defaultScrollSpeed,
+    this.scrollAnimationLength = defaultNormalScrollAnimationLengthMS,
     this.curve = Curves.linear,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

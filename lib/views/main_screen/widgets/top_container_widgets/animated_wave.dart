@@ -23,14 +23,15 @@ class _MyAnimatedWavesCurves extends State<AnimatedWave>
   @override
   void initState() {
     super.initState();
-    _controller =
-        AnimationController(duration: Duration(seconds: 4), vsync: this);
+    _controller = AnimationController(
+        duration: const Duration(seconds: 4), vsync: this);
     _controller?.repeat();
     //we set animation duration, and repeat for infinity
 
     animation = Tween<double>(begin: -400, end: 0).animate(_controller!);
     //we have set begin to -600 and end to 0, it will provide the value for
-    //left or right position for Positioned() widget to creat movement from left to right
+    //left or right position for Positioned() widget to create movement
+    // from left to right
     animation?.addListener(() {
       setState(() {}); //update UI on every animation value update
     });

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../common_widgets/buttons/custom_elevated_button.dart';
 import '../../../../../common_widgets/gap_width.dart';
-import '../../../../../common_widgets/meyo_button.dart';
 
 class MiddleStartContact extends StatelessWidget {
   const MiddleStartContact({Key? key}) : super(key: key);
@@ -11,7 +11,11 @@ class MiddleStartContact extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const MeyoButton(text: 'Start Now'),
+        MeyoButton(
+          text: 'Start Now >',
+          fontSize: 25.sp,
+          widthPadding: 10,
+        ),
         const GapWidth(20),
         TextButton(
           onPressed: () {},

@@ -2,10 +2,10 @@ import 'package:ebe_payment/controllers/main_screen/main_controller.dart';
 import 'package:ebe_payment/core/partners_list.dart';
 import 'package:ebe_payment/core/screen_sizes.dart';
 import 'package:ebe_payment/views/common_widgets/gap_height.dart';
+import 'package:ebe_payment/views/common_widgets/texts/custom_header_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class PartnersContainer extends StatelessWidget {
   const PartnersContainer({Key? key}) : super(key: key);
@@ -17,12 +17,9 @@ class PartnersContainer extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'Our Partners',
-            style: GoogleFonts.poppins(
-              fontSize: 40.sp,
-              fontWeight: FontWeight.w600,
-            ),
+          CustomHeaderText(
+            text: 'Our Partners',
+            fontSize: 40.sp,
           ),
           const GapHeight(10),
           GetBuilder<MainController>(
