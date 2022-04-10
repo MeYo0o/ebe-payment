@@ -47,24 +47,21 @@ class PartnersContainer extends StatelessWidget {
                           margin: const EdgeInsets.only(right: 10),
                           padding: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            color: Colors.black54,
+                            // color: Colors.black54,
                             borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.1),
-                                blurRadius: 10,
-                                offset: const Offset(0, 5),
-                              ),
-                            ],
+                            // boxShadow: [
+                            //   BoxShadow(
+                            //     color: Colors.black.withOpacity(0.1),
+                            //     blurRadius: 10,
+                            //     offset: const Offset(0, 5),
+                            //   ),
+                            // ],
                           ),
                           alignment: Alignment.center,
-                          child: Text(
+                          child: Image.asset(
                             partner,
-                            style: TextStyle(
-                              fontSize: 50.sp,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            height: 100,
+                            width: 200,
                           ),
                         ),
                       ),

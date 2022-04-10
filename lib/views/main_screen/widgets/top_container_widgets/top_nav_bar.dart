@@ -24,7 +24,8 @@ class TopNavBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Image.asset(
-            'assets/images/ebe-logo.png',
+            'assets/images/logo-min.png',
+            height: 100,
             width: 200,
           ),
           if (kCurrentSize(context) > kTablet) ...[
