@@ -2,14 +2,14 @@ import 'package:ebe_payment/core/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CustomHeaderText extends StatelessWidget {
+class CustomExplainBodyText extends StatelessWidget {
   final String text;
   final double fontSize;
   final TextAlign? textAlign;
   final FontWeight? fontWeight;
   final Alignment? containerAlignment;
 
-  const CustomHeaderText({
+  const CustomExplainBodyText({
     Key? key,
     required this.text,
     required this.fontSize,
@@ -26,9 +26,10 @@ class CustomHeaderText extends StatelessWidget {
         text,
         textAlign: textAlign ?? TextAlign.left,
         style: GoogleFonts.poppins(
-          color: kPrimaryColor,
+          color: kExplainHeaderText,
           fontSize: fontSize,
-          fontWeight: fontWeight ?? FontWeight.bold,
+          fontWeight: fontWeight ?? FontWeight.normal,
+          height: 1.2,
         ),
       ),
     );

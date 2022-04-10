@@ -64,7 +64,8 @@ class TopNavBar extends StatelessWidget {
                           .map(
                             (item) => PopupMenuItem(
                               value: item,
-                              child: Text(item),
+                              child: CustomNavText(
+                                  text: item, fontSize: 30.sp),
                             ),
                           )
                           .toList()

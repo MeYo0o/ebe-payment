@@ -1,14 +1,13 @@
 import 'package:ebe_payment/views/common_widgets/texts/custom_button_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextButton extends StatelessWidget {
   final String text;
   final double fontSize;
+  final Color textColor;
   final TextAlign? textAlign;
   final FontWeight? fontWeight;
   final Alignment? containerAlignment;
-  final Color? textColor;
   final double? widthPadding;
   final void Function()? onPressed;
 
@@ -16,7 +15,7 @@ class CustomTextButton extends StatelessWidget {
     Key? key,
     required this.text,
     required this.fontSize,
-    this.textColor,
+    required this.textColor,
     this.textAlign,
     this.fontWeight,
     this.containerAlignment,
@@ -36,14 +35,14 @@ class CustomTextButton extends StatelessWidget {
         textAlign: textAlign,
         containerAlignment: containerAlignment,
       ),
-      style: TextButton.styleFrom(
-        primary: Colors.black,
-        textStyle: TextStyle(
-          fontSize: 30.sp,
-          color: textColor ?? Colors.black,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
+      // style: TextButton.styleFrom(
+      //   primary: Colors.black,
+      //   textStyle: TextStyle(
+      //     fontSize: 30.sp,
+      //     color: textColor ?? Colors.black,
+      //     fontWeight: FontWeight.bold,
+      //   ),
+      // ),
     );
   }
 }

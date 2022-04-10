@@ -2,7 +2,7 @@ import 'package:ebe_payment/controllers/main_screen/main_controller.dart';
 import 'package:ebe_payment/core/partners_list.dart';
 import 'package:ebe_payment/core/screen_sizes.dart';
 import 'package:ebe_payment/views/common_widgets/gap_height.dart';
-import 'package:ebe_payment/views/common_widgets/texts/custom_header_text.dart';
+import 'package:ebe_payment/views/common_widgets/texts/custom_title_header_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -17,7 +17,7 @@ class PartnersContainer extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomHeaderText(
+          CustomTitleHeaderText(
             text: 'Our Partners',
             fontSize: 40.sp,
           ),
