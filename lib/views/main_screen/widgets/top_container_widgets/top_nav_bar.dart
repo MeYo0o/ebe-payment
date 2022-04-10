@@ -25,8 +25,9 @@ class TopNavBar extends StatelessWidget {
         children: [
           Image.asset(
             'assets/images/logo-min.png',
-            height: 100,
+            height: 50,
             width: 200,
+            // fit: BoxFit.cover,
           ),
           if (kCurrentSize(context) > kTablet) ...[
             Row(
