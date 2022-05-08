@@ -14,9 +14,9 @@ class FooterContainer extends StatelessWidget {
       child: Center(
         child: CustomNavText(
           text: 'EBE © 2022 - All Copyrights Reserved ',
-          fontSize: 15.sp,
+          fontSize: 20.sp,
           color: Colors.black,
-          fontWeight: FontWeight.bold,
+          // fontWeight: FontWeight.bold,
         ),
       ),
     );
