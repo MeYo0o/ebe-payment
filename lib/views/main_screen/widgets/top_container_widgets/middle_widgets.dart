@@ -13,7 +13,7 @@ class MiddleContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: 450,
+      height: kCurrentSize(context) >= kDesktop ? 450 : null,
       margin: EdgeInsets.only(
         top: 170,
         left: 20.w,

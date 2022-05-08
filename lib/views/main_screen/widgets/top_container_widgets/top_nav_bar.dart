@@ -38,7 +38,7 @@ class TopNavBar extends StatelessWidget {
                     onPressed: () {},
                     child: CustomNavText(
                       text: kMobileMenuList[index],
-                      fontSize: 22.sp,
+                      fontSize: 25.sp,
                     ),
                   ),
                 ),
@@ -59,6 +59,9 @@ class TopNavBar extends StatelessWidget {
                   onExit: (exit) {},
                   child: PopupMenuButton(
                     key: Get.find<MainController>().mainPopupMenuKey,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     icon: const Icon(
                       Icons.menu,
                       color: Colors.white,
@@ -68,7 +71,11 @@ class TopNavBar extends StatelessWidget {
                         .map(
                           (item) => PopupMenuItem(
                             value: item,
-                            child: CustomNavText(text: item, fontSize: 30.sp),
+                            child: CustomNavText(
+                              text: item,
+                              fontSize: 30.sp,
+                              color: Colors.black,
+                            ),
                           ),
                         )
                         .toList()
