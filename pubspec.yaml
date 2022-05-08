@@ -41,6 +41,7 @@ dependencies:
   hovering: ^1.0.4
   firebase_core: ^1.14.0
   keframe: ^2.0.4
+  url_strategy: ^0.2.0
 #  smooth_scroll_web: ^0.0.4
 
 dev_dependencies:
