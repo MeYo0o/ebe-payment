@@ -15,15 +15,15 @@ class MiddleStartContact extends StatelessWidget {
       children: [
         MeyoButton(
           text: 'Start Now >',
-          fontSize: 25.sp,
+          fontSize: 20.sp,
           widthPadding: 10,
         ),
         const GapWidth(20),
         CustomTextButton(
           text: 'Contact Sales >',
           textColor: kExplainBodyText,
-          fontSize: 30.sp,
-          fontWeight: FontWeight.w600,
+          fontSize: 20.sp,
+          fontWeight: FontWeight.bold,
         ),
         // TextButton(
         //   onPressed: () {},

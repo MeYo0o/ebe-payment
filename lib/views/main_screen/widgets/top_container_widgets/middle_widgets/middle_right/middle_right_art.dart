@@ -17,9 +17,23 @@ class _MiddleRightArtState extends State<MiddleRightArt> {
   void didChangeDependencies() async {
     super.didChangeDependencies();
     await Future.delayed(const Duration(milliseconds: 1500));
-    setState(() {
-      _animatedRightPos = 60.w;
-    });
+    setState(
+      () {
+        kCurrentSize(context) < kDesktop
+            ? _animatedRightPos = 15.w
+            : kCurrentSize(context) < 1100
+                ? _animatedRightPos = 25.w
+                : kCurrentSize(context) < 1250
+                    ? _animatedRightPos = 40.w
+                    : kCurrentSize(context) < 1300
+                        ? _animatedRightPos = 50.w
+                        : kCurrentSize(context) <= 1450
+                            ? _animatedRightPos = 60.w
+                            : kCurrentSize(context) <= 1500
+                                ? _animatedRightPos = 60.w
+                                : _animatedRightPos = 70.w;
+      },
+    );
   }
 
   @override

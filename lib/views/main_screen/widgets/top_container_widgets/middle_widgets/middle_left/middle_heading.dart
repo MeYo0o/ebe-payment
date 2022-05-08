@@ -13,7 +13,7 @@ class MiddleHeading extends StatelessWidget {
       width: kCurrentSize(context) < kDesktop ? null : 400.w,
       child: CustomExplainHeaderText(
         text: 'Payments infrastructure for the internet',
-        fontSize: 130.sp,
+        fontSize: 100.sp,
       ),
     );
   }

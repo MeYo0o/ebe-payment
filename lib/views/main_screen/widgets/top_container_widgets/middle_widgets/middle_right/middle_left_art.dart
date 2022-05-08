@@ -29,7 +29,7 @@ class _MiddleLeftArtState extends State<MiddleLeftArt> {
         duration: const Duration(milliseconds: 1500),
         top: _animatedTopPos,
         //animate for right
-        right: 220.w,
+        right: 180.w,
         child: Container(
           height: 400,
           alignment: Alignment.center,

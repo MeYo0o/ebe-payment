@@ -37,52 +37,54 @@ class TopNavBar extends StatelessWidget {
                   (index) => TextButton(
                     onPressed: () {},
                     child: CustomNavText(
-                        text: kMobileMenuList[index], fontSize: 30.sp),
+                      text: kMobileMenuList[index],
+                      fontSize: 22.sp,
+                    ),
                   ),
                 ),
               ],
             ),
             MeyoButton(
               text: 'Sign In',
-              fontSize: 25.sp,
+              fontSize: 20.sp,
             ),
           ] else ...[
             GetBuilder<MainController>(
-                init: Get.find<MainController>(),
-                builder: (mc) {
-                  return MouseRegion(
-                    onHover: (hover) {
-                      mc.mainPopupMenuKey.currentState!.showButtonMenu();
-                    },
-                    onExit: (exit) {},
-                    child: PopupMenuButton(
-                      key: Get.find<MainController>().mainPopupMenuKey,
-                      icon: const Icon(
-                        Icons.menu,
-                        color: Colors.white,
-                      ),
-                      offset: const Offset(0, 40),
-                      itemBuilder: (context) => kMobileMenuList
-                          .map(
-                            (item) => PopupMenuItem(
-                              value: item,
-                              child: CustomNavText(
-                                  text: item, fontSize: 30.sp),
-                            ),
-                          )
-                          .toList()
-                        ..add(
-                          PopupMenuItem(
-                            value: '',
-                            child: MeyoButton(
-                              text: 'Sign In',
-                              fontSize: 25.sp,
-                            ),
+              init: Get.find<MainController>(),
+              builder: (mc) {
+                return MouseRegion(
+                  onHover: (hover) {
+                    mc.mainPopupMenuKey.currentState!.showButtonMenu();
+                  },
+                  onExit: (exit) {},
+                  child: PopupMenuButton(
+                    key: Get.find<MainController>().mainPopupMenuKey,
+                    icon: const Icon(
+                      Icons.menu,
+                      color: Colors.white,
+                    ),
+                    offset: const Offset(0, 40),
+                    itemBuilder: (context) => kMobileMenuList
+                        .map(
+                          (item) => PopupMenuItem(
+                            value: item,
+                            child: CustomNavText(text: item, fontSize: 30.sp),
+                          ),
+                        )
+                        .toList()
+                      ..add(
+                        PopupMenuItem(
+                          value: '',
+                          child: MeyoButton(
+                            text: 'Sign In',
+                            fontSize: 20.sp,
                           ),
                         ),
-                    ),
-                  );
-                }),
+                      ),
+                  ),
+                );
+              },
+            ),
           ],
         ],
       ),
